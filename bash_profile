@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load .bashrc and other files...
-for file in ~/.bash{_prompt,_aliases,_autocomplete,_options,_functions,_exports,_path,_logout,.local}; do
+for file in ~/.bash_{prompt,aliases,autocomplete,options,functions,exports,path,logout}; do
     if [[ -r "$file" ]] && [[ -f "$file" ]]; then
         # shellcheck source=/dev/null
         source "$file"

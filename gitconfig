@@ -222,12 +222,6 @@
     followTags = true
     default = simple
 
-[user]
-
-    # Do not guess the user's identity.
-    # https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855
-
-    useConfigOnly = true
 
 [filter "lfs"]
     required = true
@@ -236,13 +230,37 @@
     process = git-lfs filter-process
 
 
-[include]
 
-    # Load local configs.
-    # https://git-scm.com/docs/git-config#_includes
-    #
-    # [!] The following needs to remain at the end of this file in
-    #     order to allow any of the above configs to be overwritten
-    #     by the local ones
 
-    path = ~/.gitconfig.local
+[user]
+    # Do not guess the user's identity.
+    # https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855
+    useConfigOnly = true
+
+    name = Alexander Sidorenko
+    email = aleks.sidorenko@gmail.com
+[merge]
+    tool = kdiff3
+[diff]
+    tool = icdiff
+[difftool]
+    prompt = false
+[difftool "kdiff3"]
+    path = /usr/bin/kdiff3
+[difftool "icdiff"]
+    cmd = icdiff $LOCAL $REMOTE
+[mergetool "kdiff3"]
+    path = /usr/bin/kdiff3
+[credential]
+    helper = store
+[push]
+    default = current
+[http]
+   sslverify = false
+[commit]
+   gpgsign = true
+
+
+; include for all repositories inside ~/Projects/Personal/HomeAccounting
+[includeIf "gitdir:~/Projects/Personal/HomeAccounting"]
+    path = ~/Projects/Personal/HomeAccounting/.gitconfig
