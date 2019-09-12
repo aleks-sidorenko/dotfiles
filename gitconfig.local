@@ -1,22 +1,22 @@
 [user]
-	name = Alexander Sidorenko
-	email = aleks.sidorenko@gmail.com
+    name = Alexander Sidorenko
+    email = aleks.sidorenko@gmail.com
 [merge]
-	tool = kdiff3
+    tool = kdiff3
 [diff]
-	tool = icdiff
+    tool = icdiff
 [difftool]
-	prompt = false
+    prompt = false
 [difftool "kdiff3"]
-	path = /usr/bin/kdiff3
+    path = /usr/bin/kdiff3
 [difftool "icdiff"]
     cmd = icdiff $LOCAL $REMOTE
 [mergetool "kdiff3"]
-	path = /usr/bin/kdiff3
+    path = /usr/bin/kdiff3
 [credential]
-	helper = store
+    helper = store
 [push]
-	default = current
+    default = current
 [http]
    sslverify = false
 [commit]
@@ -25,4 +25,4 @@
 
 ; include for all repositories inside ~/Projects/Personal/HomeAccounting
 [includeIf "gitdir:~/Projects/Personal/HomeAccounting"]
-	path = ~/Projects/Personal/HomeAccounting/.gitconfig.local
+    path = ~/Projects/Personal/HomeAccounting/.gitconfig.local
