@@ -9,3 +9,10 @@ cd $HOME/Dotfiles
 git submodule update --init
 dotfiles --sync
 ```
+
+## Update
+```
+cd $HOME/Dotfiles
+git pull
+git submodule update --remote
+```
