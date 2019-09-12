@@ -1,1 +1,31 @@
-/home/alexander/.dotfiles/src/shell/inputrc
+#!/bin/bash
+
+# Readline library configuration options.
+# http://ss64.com/bash/syntax-inputrc.html
+
+
+# if there are multiple matches for completion, make TAB cycle through them.
+TAB: menu-complete
+
+
+# searching files via partial match.
+# ↑
+"\e[A":history-search-backward
+# ↓
+"\e[B":history-search-forward
+
+
+# disable beeping and window flashing.
+set bell-style none
+
+
+# use case-insensitive TAB autocompletion.
+set completion-ignore-case on
+
+
+# perform partial completion on the first Tab press, and only start cycling full results on the second Tab press.
+set menu-complete-display-prefix on
+
+
+# display a list of the matching files
+set show-all-if-ambiguous on
