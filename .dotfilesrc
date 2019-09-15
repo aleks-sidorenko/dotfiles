@@ -1,6 +1,5 @@
 [dotfiles]
 repository = ~/Dotfiles
-packages = ['local']
 
 ignore = [
     '.git',

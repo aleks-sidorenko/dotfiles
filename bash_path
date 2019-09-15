@@ -19,7 +19,7 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then . /usr/local/bin/virtualenvw
 export UMAKE_HOME="$HOME/.local/share/umake"
 
 # user local bin
-export USER_LOCAL_BIN="$HOME/.local/bin"
+export USER_LOCAL_BIN="$HOME/.bin"
 
 # go
 export GOPATH=${HOME}/go
