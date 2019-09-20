@@ -137,3 +137,7 @@ alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=>
 
 # Pipe my private key to my clipboard.
 alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
+
+
+# Update
+alias update="sudo apt update && sudo apt -y upgrade && sudo apt dist-upgrade && sudo apt -y autoremove"
