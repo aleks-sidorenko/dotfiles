@@ -260,7 +260,5 @@
 [commit]
    gpgsign = true
 
-
-; include for all repositories inside ~/Projects/Personal/HomeAccounting
-[includeIf "gitdir:~/Projects/Personal/HomeAccounting"]
-    path = ~/Projects/Personal/HomeAccounting/.gitconfig
+[include]
+    path = ~/Projects/.gitconfig
