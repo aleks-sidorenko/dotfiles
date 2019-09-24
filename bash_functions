@@ -468,3 +468,30 @@ gitsetoriginnopush() {
 gitsetorigin() {
     git remote set-url origin $1
 }
+
+# Set current working project context
+projctx() {
+    if [ -z "${1}" ]; then
+        echo "Usage: \`projctx project\`"
+        return 1
+    fi
+    
+    export PROJECT_NAME=$1
+    export PROJECT_HOME=$PROJECTS_HOME/Current/$PROJECT_NAME
+
+    echo "Setting current project to $PROJECT_NAME"
+    
+    cd $PROJECT_HOME
+    context=./context
+    if [[ -r "$context" ]] && [[ -f "$context" ]]; then
+        source "$context"
+    fi
+}
+
+_projctx() {
+    local projects=("$PROJECTS_HOME/Current/$2"*)
+    [[ -e ${projects[0]} ]] && COMPREPLY=( "${projects[@]##*/}" )
+}
+
+complete -F _projctx projctx
+

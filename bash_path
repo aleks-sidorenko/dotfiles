@@ -13,7 +13,6 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 export PYTHONIOENCODING="UTF-8"
 export WORKON_HOME=${HOME}/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export PROJECT_HOME=$PROJECTS_HOME
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then . /usr/local/bin/virtualenvwrapper.sh; fi
 

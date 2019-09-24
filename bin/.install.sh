@@ -13,6 +13,7 @@ sudo apt install -y htop iftop docker.io
 sudo snap install code --classic
 sudo snap install intellij-idea-community --classic
 
-# messangers
+# messengers
+sudo snap install slack --classic
 sudo snap install viber-unofficial
 sudo snap install telegram-desktop
