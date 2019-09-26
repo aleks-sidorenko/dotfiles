@@ -140,4 +140,4 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Pri
 
 
 # Update
-alias update="sudo apt update && sudo apt -y upgrade && sudo apt dist-upgrade && sudo apt -y autoremove"
+alias update="sudo apt update && sudo apt -y upgrade && sudo apt dist-upgrade && sudo apt -y autoremove && snap refresh"
