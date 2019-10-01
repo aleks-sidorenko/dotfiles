@@ -1,0 +1,34 @@
+# ========================
+# User .bazelrc for Ubuntu
+# ========================
+startup --host_jvm_args=-Xmx8096m
+startup --io_nice_level=7
+
+# Just making sure that we don't OOM with parallel builds
+build --local_resources=8096,.5,1.0
+
+build --ram_utilization_factor=50
+build --jobs=2
+
+# This is so we understand failures better
+build --verbose_failures
+
+# Temporary for bazel 0.28.0 https://github.com/bazelbuild/bazel/issues/8571#issuecomment-510366705
+info --experimental_google_legacy_api
+build --experimental_google_legacy_api
+
+# Disable by default building deployables (jarball and containers) locally since they aren't used and take a long time
+build --build_tag_filters=-deployable
+
+# Helps with timeouts when fetching multiple large docker images
+fetch --experimental_scale_timeouts=20
+
+# TEST - unique flags for running all UT
+# Active those flags by running adding the flag: "--config=ut-only"
+# Note: This is only required if you give bazel wildcard that might include IT
+test:ut-only --test_tag_filters=UT,-IT
+
+# TEST - unique flags for running IT
+# Active those flags by running adding the flag: "--config=it"
+test:it --test_tag_filters=IT
+
