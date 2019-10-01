@@ -496,20 +496,15 @@ _projctx() {
 complete -F _projctx projctx
 
 
-cpupin() {
-    pname=${1}
-    cpulist=${2:-0}
-
-    if [ -z "${pname}" ]; then
-        echo "Usage: \`cpupin processname cpumask\`"
+cpfile() {
+    local file=${1}
+    
+    if [ -z "${file}" ]; then
+        echo "Usage: \`cpfile file\`"
         return 1
     fi
-
-    pname=${1}
-    cpulist=${2:-0}
-    for pid in $(pgrep "${pname}"); do
-        echo "Setting affinity ${cpulist} to PID: ${pid} (${pname})"
-        taskset -acp "${cpulist}" "${pid}"
-    done
+        
+    more $file | xclip -selection clipboard
+    echo "File $file is copied to pasteboard"
 }
 
