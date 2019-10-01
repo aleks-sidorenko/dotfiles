@@ -40,4 +40,4 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
 fi
 
 # set xdg data dirs for dmenu to source
-export XDG_DATA_DIRS=/usr/share/
+export XDG_DATA_DIRS="/usr/share/:/var/lib/snapd/desktop"
