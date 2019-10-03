@@ -4,7 +4,7 @@
 export PROJECTS_HOME="${HOME}/Projects"
 export DOTFILES_HOME="${HOME}/Dotfiles"
 # global user bin
-export USER_BIN=/usr/local/bin
+export GLOBAL_BIN=/usr/local/bin
 
 # java
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
@@ -20,13 +20,14 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then . /usr/local/bin/virtualenvw
 export UMAKE_HOME="$HOME/.local/share/umake"
 
 # user local bin
-export USER_LOCAL_BIN="$HOME/.bin"
+export USER_BIN="$HOME/.bin"
+export USER_LOCAL_BIN="$HOME/.local/bin"
 
 # go
 export GOPATH=${HOME}/go
 
 # update path
-export PATH=${USER_LOCAL_BIN}:${USER_BIN}:${PATH}:/sbin
+export PATH=${USER_LOCAL_BIN}:${USER_BIN}:${GLOBAL_BIN}:${PATH}:/sbin
 
 # add go to path
 export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
