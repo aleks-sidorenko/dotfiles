@@ -4,11 +4,11 @@
 #startup --host_jvm_args=-Xmx8096m
 startup --io_nice_level=7
 
-# Just making sure that we don't OOM with parallel builds
-build --local_resources=8096,.5,1.0
-
+# Restrictions for local resources (CPU, memory)
+build --local_cpu_resources=HOST_CPUS*.5
+build --local_ram_resources=HOST_RAM*.7
 build --ram_utilization_factor=50
-build --jobs=2
+#build --jobs=4
 
 # This is so we understand failures better
 build --verbose_failures
