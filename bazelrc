@@ -1,21 +1,29 @@
 # ========================
-# User .bazelrc for Ubuntu
+# User .bazelrc for Linux
 # ========================
-#startup --host_jvm_args=-Xmx8096m
-startup --io_nice_level=7
 
-# Restrictions for local resources (CPU, memory)
-build --local_cpu_resources=HOST_CPUS*.5
-build --local_ram_resources=HOST_RAM*.7
-build --ram_utilization_factor=50
-#build --jobs=4
+# The following file is where user custom bazel flags can be placed!
+try-import ~/.bazelrc.local
 
-# This is so we understand failures better
-build --verbose_failures
+
+
+
+
+#-----------------------------------------------------
+# Cache options
+#-----------------------------------------------------
+
+fetch --repository_cache=~/.cache/bazel/http
+fetch --experimental_repository_cache_hardlinks
+build --repository_cache=~/.cache/bazel/http
+build --experimental_repository_cache_hardlinks
 
 # Temporary for bazel 0.28.0 https://github.com/bazelbuild/bazel/issues/8571#issuecomment-510366705
 info --experimental_google_legacy_api
 build --experimental_google_legacy_api
+
+# This is so we understand failures better
+build --verbose_failures
 
 # Disable by default building deployables (jarball and containers) locally since they aren't used and take a long time
 build --build_tag_filters=-deployable
@@ -24,6 +32,10 @@ build --build_tag_filters=-deployable
 fetch --experimental_scale_timeouts=20
 
 
+#-----------------------------------------------------
+# Testing options
+#-----------------------------------------------------
+
 test --strategy=TestRunner=standalone
 
 # TEST - unique flags for running all UT
@@ -31,8 +43,19 @@ test --strategy=TestRunner=standalone
 # Note: This is only required if you give bazel wildcard that might include IT
 test:ut-only --test_tag_filters=UT,-IT
 
-
 # TEST - unique flags for running IT
 # Active those flags by running adding the flag: "--config=it"
 test:it --test_tag_filters=IT
 test:it --local_test_jobs=1
+
+#-----------------------------------------------------
+# Startup & resource utilization options
+#-----------------------------------------------------
+
+startup --io_nice_level=7
+
+# Restrictions for local resources (CPU, memory)
+build --local_cpu_resources=HOST_CPUS*.5
+build --local_ram_resources=HOST_RAM*.7
+build --ram_utilization_factor=50
+#build --jobs=4
