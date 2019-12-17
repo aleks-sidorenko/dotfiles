@@ -60,6 +60,11 @@ img_import() {
     echo "Imported images from $src to $dst"
 }
 
+img_resize() {
+    src=$1
+    find . -maxdepth 1 -iname "*.jpg" | xargs -L1 -I{} convert -resize 50% $src/"{}" $src/"{}"
+}
+
 
 device_folders=("/storage/$MOBILE_SDCARD_ID/DCIM/Camera" "/sdcard/DCIM/Camera" "/sdcard/DCIM/Video\ Editor")
 
