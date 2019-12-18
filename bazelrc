@@ -3,39 +3,24 @@
 # ========================
 
 # The following file is where user custom bazel flags can be placed!
+# Using '~' here does not work for some reason, so we use an expanded user home path. 
 try-import ~/.bazelrc.local
 
+# Useful debugging flags
+common:debug --announce_rc
+common:debug --explain=bazel_explain.log
+common:debug --verbose_explanations=true
+common:debug --toolchain_resolution_debug
+common:debug --curses=no
 
-
-
-
-#-----------------------------------------------------
-# Cache options
-#-----------------------------------------------------
-
+# Repository cache
 fetch --repository_cache=~/.cache/bazel/http
-fetch --experimental_repository_cache_hardlinks
 build --repository_cache=~/.cache/bazel/http
+fetch --experimental_repository_cache_hardlinks
 build --experimental_repository_cache_hardlinks
-build --action_env=DOCKER_REPO_CACHE=~/.cache/bazel/docker
-# Wix specific caching and optimizations
-build:wix --action_env=mongo_repository_cache=~/.cache/bazel/mongo
-build:wix --action_env=mysql_repository_cache=~/.cache/bazel/mysql
-
-
-# Temporary for bazel 0.28.0 https://github.com/bazelbuild/bazel/issues/8571#issuecomment-510366705
-info --experimental_google_legacy_api
-build --experimental_google_legacy_api
-
-# This is so we understand failures better
-build --verbose_failures
-
-# NPM
-build:wix --action_env=NPM_CONFIG_REGISTRY=http://repo.dev.wixpress.com/artifactory/api/npm/npm-repos
-
 
 # Disable by default building deployables (jarball and containers) locally since they aren't used and take a long time
-build --build_tag_filters=-deployable
+build:wix --build_tag_filters=-deployable
 
 # Helps with timeouts when fetching multiple large docker images
 fetch --experimental_scale_timeouts=20
@@ -57,12 +42,13 @@ test:ut-only --test_tag_filters=UT,-IT
 test:it --test_tag_filters=IT
 test:it --local_test_jobs=1
 
+
 #-----------------------------------------------------
 # Startup & resource utilization options
 #-----------------------------------------------------
-
+ 
 startup --io_nice_level=7
-
+ 
 # Restrictions for local resources (CPU, memory)
 build --local_cpu_resources=HOST_CPUS*.5
 build --local_ram_resources=HOST_RAM*.7
