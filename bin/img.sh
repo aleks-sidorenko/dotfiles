@@ -66,27 +66,21 @@ img_resize() {
 }
 
 
-device_folders=("/storage/$MOBILE_SDCARD_ID/DCIM/Camera" "/sdcard/DCIM/Camera" "/sdcard/DCIM/Video\ Editor")
-
 img_dev_pull() {
 
-    if [ -z "$MOBILE_SDCARD_ID" ]; then
-        print_error "Please provide a mobile sdcard id (MOBILE_SDCARD_ID)"
-        exit 1
-    fi
-
-    tmp=$(mktemp -d)
-
-    echo "Pulling images from device folders to $tmp"
+    device_folders=$1
+    dst=$2
+    
+    echo "Pulling images from device folders to $dst"
 
     for dev in "${device_folders[@]}"
     do
-        echo "Pulling images from device folder $dev to $tmp"
-        adb pull "$dev" $tmp
-        echo "Pulled images from device folder $dev to $tmp"
+        echo "Pulling images from device folder $dev to $dst"
+        adb pull "$dev" "$dst"
+        echo "Pulled images from device folder $dev to $dst"
     done
     
-    echo "Pulled images from device folders to $tmp"
+    echo "Pulled images from device folders to $dst"
 
     
 
@@ -94,11 +88,8 @@ img_dev_pull() {
 
 img_dev_cleanup() {
 
-    if [ -z "$MOBILE_SDCARD_ID" ]; then
-        print_error "Please provide a mobile sdcard id (MOBILE_SDCARD_ID)"
-        exit 1
-    fi
-
+    device_folders=$1
+    
     echo "Cleaning images from device folders"
 
     for dev in "${device_folders[@]}"
