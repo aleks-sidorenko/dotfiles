@@ -10,14 +10,33 @@ try-import ~/.bazelrc.local
 common:debug --announce_rc
 common:debug --explain=bazel_explain.log
 common:debug --verbose_explanations=true
+common:debug --verbose_failures
 common:debug --toolchain_resolution_debug
 common:debug --curses=no
+test:debug --test_verbose_timeout_warnings
+test:debug --verbose_test_summary
+
 
 # Repository cache
 fetch --repository_cache=~/.cache/bazel/http
 build --repository_cache=~/.cache/bazel/http
 fetch --experimental_repository_cache_hardlinks
 build --experimental_repository_cache_hardlinks
+
+#
+# Disk cache can significantly improve build performance when working with multiple branches of the same repository or
+# when working with multiple repositories that share a lot of source dependencies.
+# When enabled, bazel will use the directory '~/.cache/bazel/disk_cache' to store cached build targets.
+#
+# NOTE! bazel does not have any cache eviction policy, so until otherwise is published, if you choose to enable 
+# disk-cache, be aware that you might need to manually delete old files from that directory.
+#
+# Enable by adding 'build --config=disk_cache' one of:
+# 1. '~/my.bazelrc'
+# 2. 'build_flags' section in IJ project view file
+#
+# DO NOT OVERRIDE THIS CONFIGURATION   
+build:disk_cache --disk_cache=~/.cache/bazel/disk_cache
 
 # Disable by default building deployables (jarball and containers) locally since they aren't used and take a long time
 build:wix --build_tag_filters=-deployable
