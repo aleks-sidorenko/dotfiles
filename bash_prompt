@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Run tmux
+# make sure that (1) tmux exists on the system, (2) we're in an interactive shell, and (3) tmux doesn't try to run within itself
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 
 # Shell prompt based on the Solarized Dark theme.
 # Screenshot: http://i.imgur.com/EkEtphC.png
@@ -14,6 +19,8 @@ elif infocmp rxvt-unicode-256color >/dev/null 2>&1; then
 elif infocmp xterm-256color >/dev/null 2>&1; then
     export TERM='xterm-256color';
 fi;
+
+
 
 prompt_git() {
     local s='';
