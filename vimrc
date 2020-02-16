@@ -22,6 +22,9 @@ set nowritebackup
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
 set encoding=utf-8              " Set default encoding to UTF-8
+set termencoding=utf-8
+set fileencodings=utf-8,cp1251,cp866,koi8-r " Set default encoding to UTF-8 and add russian encodings
+
 set autowrite                   " Automatically save before :next, :make etc.
 set autoread                    " Automatically reread changed files without asking me anything
 set laststatus=2
