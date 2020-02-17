@@ -1,8 +1,10 @@
 [dotfiles]
-repository = ~/Dotfiles
+repository = ~/.dotfiles
 
 ignore = [
     '.git',
+    '.gitignore',
+    'README.md',
     '*.swp']
 
 externals = {

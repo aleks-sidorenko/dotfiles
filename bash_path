@@ -2,7 +2,9 @@
 
 
 export PROJECTS_HOME="${HOME}/Projects"
-export DOTFILES_HOME="${HOME}/Dotfiles"
+
+export DOTFILES_HOME="${HOME}/.dotfiles"
+
 # global user bin
 export GLOBAL_BIN=/usr/local/bin
 
