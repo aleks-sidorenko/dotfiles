@@ -1,6 +1,3 @@
-" I'm Fish
-set shell=/bin/bash
-
 " Plugins!
 call plug#begin('~/.vim/plugged')
 
