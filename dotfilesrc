@@ -1,9 +1,12 @@
 [dotfiles]
 repository = ~/.dotfiles
+packages = ['oh-my-bash']
+
 
 ignore = [
     '.git',
     '.gitignore',
+    '.gitmodules',
     'README.md',
     '*.swp']
 
