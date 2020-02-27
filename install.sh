@@ -6,6 +6,7 @@ export DOTFILES_HOME="${HOME}/.dotfiles"
 sudo apt update
 sudo apt upgrade
 sudo apt install -y curl wget git
+sudo apt install -y fonts-powerline
 
 sudo pip install dotfiles
 
@@ -15,6 +16,8 @@ git clone --recursive https://github.com/aleks-sidorenko/dotfiles.git $DOTFILES_
 
 # Install oh-my-bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
+
 
 # Sync dotfiles
 dotfiles --sync -C $DOTFILES_HOME/dotfilesrc
@@ -33,7 +36,7 @@ sudo apt install -y tmux
 
 
 # Tools
-sudo apt install -y htop iftop docker.io openjdk-11-jdk
+sudo apt install -y htop iftop docker.io
 sudo pip3 install thefuck
 
 # SDK
