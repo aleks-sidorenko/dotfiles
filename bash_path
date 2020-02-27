@@ -9,7 +9,7 @@ export DOTFILES_HOME="${HOME}/.dotfiles"
 export GLOBAL_BIN=/usr/local/bin
 
 # java
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 # python
 export PYTHONIOENCODING="UTF-8"

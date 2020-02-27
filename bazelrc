@@ -49,7 +49,7 @@ build --experimental_scale_timeouts=20
 # Testing options
 #-----------------------------------------------------
 
-test --strategy=TestRunner=standalone
+test --strategy=TestRunner=standalone --test_output=all
 
 # TEST - unique flags for running all UT
 # Active those flags by running adding the flag: "--config=ut-only"
