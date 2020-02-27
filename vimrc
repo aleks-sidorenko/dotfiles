@@ -8,12 +8,17 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'pangloss/vim-javascript'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
 Plug 'YorickPeterse/happy_hacking.vim'
+
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
+Plug 'dag/vim-fish'
+Plug 'derekwyatt/vim-scala'
+Plug 'neovimhaskell/haskell-vim.git'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
