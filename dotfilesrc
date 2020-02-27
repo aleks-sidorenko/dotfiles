@@ -8,6 +8,7 @@ ignore = [
     '.gitignore',
     '.gitmodules',
     'README.md',
+    'vscode',
     '*.swp']
 
 externals = {
