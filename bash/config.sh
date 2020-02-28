@@ -35,6 +35,9 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   tmux
 fi
 
+
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 # Clear console on exit.
 [ "$SHLVL" == 1 ] \
     && clear &> /dev/null

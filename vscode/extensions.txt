@@ -1,3 +1,4 @@
+smlombardi.darcula-extended
 DevonDCarew.bazel-code
 jebbs.plantuml
 justusadam.language-haskell
