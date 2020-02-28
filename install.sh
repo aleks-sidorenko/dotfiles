@@ -6,7 +6,16 @@ export DOTFILES_HOME="${HOME}/.dotfiles"
 sudo apt update
 sudo apt upgrade
 sudo apt install -y curl wget git
-sudo apt install -y fonts-powerline
+
+# Install powerline fonts https://github.com/powerline/fonts
+
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+#sudo apt install -y fonts-powerline
+#sudo fc-cache -f -v
 
 sudo pip install dotfiles
 

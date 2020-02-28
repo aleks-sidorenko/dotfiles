@@ -55,6 +55,7 @@ completions=(
   ssh
   pip
   pip3
+  tmux
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
