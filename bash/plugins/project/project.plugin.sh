@@ -8,9 +8,14 @@ export PROJECT_CURRENT="${PROJECT_ROOT}/Current"
 
 # Set current working project context
 project() {
-    if [ -z "${1}" ]; then
-        echo "Usage: \`project NAME\`"
-        return 1
+    if [[ -z "${1}" ]]; then
+        if [[ -z "${PROJECT_NAME}" ]]; then
+            echo "Usage: project PROJECT_NAME"
+            return 1
+        else
+            echo "Current project is: [$PROJECT_NAME]"
+            return 0
+        fi
     fi
     
     export PROJECT_NAME=$1
