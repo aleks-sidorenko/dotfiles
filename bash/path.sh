@@ -13,8 +13,6 @@ export XDG_CONFIG_DIRS=/etc/xdg
 # Dotfiles home directory
 export DOTFILES_HOME=${HOME}/.dotfiles
 
-# Projects home directory
-export PROJECTS_HOME="${HOME}/Projects"
 
 # Java
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"

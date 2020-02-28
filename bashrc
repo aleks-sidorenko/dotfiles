@@ -74,6 +74,7 @@ plugins=(
   git
   bashmarks
   battery
+  project
 )
 
 source $OSH/oh-my-bash.sh
