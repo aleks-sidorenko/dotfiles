@@ -21,23 +21,34 @@ call plug#end()
 
 " Setting
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Forget compatibility with Vi. Who cares.
+set nocompatible
+
+"Enable filetypes
+filetype on
+
+filetype plugin on
+filetype indent on
+
+" Highlight code
+syntax on
 
 " Update time for gitgutter
 set updatetime=250
+
+" Ever notice a slight lag after typing the leader key + command? This lowers the timeout.
+set timeoutlen=500
+
 " Colours
 colorscheme dracula
 " Show numbers
 set number
 " Show statusline
 set laststatus=2
-" Highlight code
-syntax on
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
+
 " Mouse on
 set mouse=a
+
 " set Search Highlight by default on 
 set hls
 
@@ -45,11 +56,21 @@ set hls
 set clipboard^=unnamed,unnamedplus
 
 " Key bindings
+" Map leader than \
+let mapleader = ","
+
 
 " Better window navigation
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" NERDTree
+nnoremap <C-n> :NERDTreeToggle<CR>
+
 " Use FZF together with NERDTree
-nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <expr> <leader><leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<CR>"
+
+" Open terminal/console in the bottom
+nnoremap <C-t> :wincmd b \| bel terminal<CR>
