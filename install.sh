@@ -30,7 +30,7 @@ mkdir -p $HOME/.config/Code/User
 ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code/User/settings.json
 
 # Install vim & plugins
-sudo apt install -y vim
+sudo apt install -y vim vim-gnome
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
