@@ -55,6 +55,7 @@ completions=(
   ssh
   pip
   pip3
+  kubectl
   tmux
 )
 

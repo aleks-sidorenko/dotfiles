@@ -40,6 +40,12 @@ map <C-n> :NERDTreeToggle<CR>
 set mouse=a
 " set Search Highlight by default on 
 set hls
+
+" Make copy-paste to work C-c & C-v
+set clipboard^=unnamed,unnamedplus
+
+" Key bindings
+
 " Better window navigation
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
