@@ -7,14 +7,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
-Plug 'YorickPeterse/happy_hacking.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'dag/vim-fish'
 Plug 'derekwyatt/vim-scala'
-Plug 'neovimhaskell/haskell-vim.git'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 
 call plug#end()
@@ -27,7 +27,7 @@ filetype off                  " required
 " Update time for gitgutter
 set updatetime=250
 " Colours
-colorscheme happy_hacking
+colorscheme dracula
 " Show numbers
 set number
 " Show statusline
