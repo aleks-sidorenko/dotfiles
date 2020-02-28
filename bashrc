@@ -76,6 +76,7 @@ plugins=(
   bashmarks
   battery
   project
+  finance
 )
 
 source $OSH/oh-my-bash.sh

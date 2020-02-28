@@ -1,4 +1,6 @@
+"
 " Plugins!
+"
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
@@ -19,7 +21,9 @@ Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
+"
 " Setting
+"
 
 " Forget compatibility with Vi. Who cares.
 set nocompatible
@@ -43,8 +47,45 @@ set timeoutlen=500
 colorscheme dracula
 " Show numbers
 set number
+
 " Show statusline
 set laststatus=2
+
+set hidden
+
+" Show the cursor position all the time
+set ruler
+
+" Split vertical windows right to the current windows
+set splitright
+
+" Split horizontal windows below to the current windows
+set splitbelow
+
+ " Set default encoding to UTF-8
+set encoding=utf-8             
+set termencoding=utf-8
+" Set default encoding to UTF-8 and add russian encodings
+set fileencodings=utf-8,cp1251,cp866,koi8-r
+
+ " Automatically save before :next, :make etc.
+set autowrite
+
+ " Automatically reread changed files without asking me anything
+set autoread
+
+" Show me what I'm typing
+set showcmd
+
+" Show current mode.
+set showmode
+
+" Don't use swapfile
+set noswapfile
+
+" Don't create annoying backup files
+set nobackup
+set nowritebackup
 
 " Mouse on
 set mouse=a
@@ -55,9 +96,12 @@ set hls
 " Make copy-paste to work C-c & C-v
 set clipboard^=unnamed,unnamedplus
 
+"
 " Key bindings
-" Map leader than \
+"
+" Map leader first
 let mapleader = ","
+let g:mapleader = ","
 
 
 " Better window navigation
