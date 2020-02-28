@@ -7,15 +7,11 @@ sudo apt update
 sudo apt upgrade
 sudo apt install -y curl wget git
 
-# Install powerline fonts https://github.com/powerline/fonts
-
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
-#sudo apt install -y fonts-powerline
-#sudo fc-cache -f -v
+# Install powerline fonts https://github.com/i-tu/Hasklig
+mkdir ~/.fonts
+wget https://github.com/i-tu/Hasklig/releases/download/1.1/Hasklig-1.1.zip -O ~/.fonts/hasklig.zip
+unzip -o ~/.fonts/hasklig.zip -d ~/.fonts
+rm ~/.fonts/hasklig.zip
 
 sudo pip install dotfiles
 
@@ -27,10 +23,11 @@ git clone --recursive https://github.com/aleks-sidorenko/dotfiles.git $DOTFILES_
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 
-
 # Sync dotfiles
 dotfiles --sync -C $DOTFILES_HOME/dotfilesrc
-
+# Symlink vs code settings since dotfiles doesn't support nested packages for now
+mkdir -p $HOME/.config/Code/User
+ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code/User/settings.json
 
 # Install vim & plugins
 sudo apt install -y vim

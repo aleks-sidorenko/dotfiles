@@ -1,9 +1,9 @@
 {
     "editor.renderWhitespace": "all",
-    "editor.fontFamily": "Source Code Pro for Powerline",
+    "editor.fontFamily": "Hasklig Medium",
     "editor.formatOnSave": true,
     "explorer.confirmDragAndDrop": false,
-    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "terminal.integrated.fontFamily": "Hasklig Medium",
     "workbench.iconTheme": "vs-seti",
     "workbench.colorTheme": "Darcula Extended",
     "window.titleBarStyle": "custom",
