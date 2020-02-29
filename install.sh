@@ -42,7 +42,7 @@ sudo apt install -y tmux
 
 
 # Tools
-sudo apt install -y htop iftop docker.io
+sudo apt install -y htop iftop docker.io xclip
 sudo pip3 install thefuck
 
 # SDK
