@@ -38,6 +38,8 @@ fi
 
 export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
+export DOCKER_HOST=unix:///var/run/docker.sock
+
 # Clear console on exit.
 [ "$SHLVL" == 1 ] \
     && clear &> /dev/null
