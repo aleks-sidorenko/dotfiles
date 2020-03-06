@@ -2,9 +2,13 @@
 # User .bazelrc for Linux
 # ========================
 
+
+
+
 # The following file is where user custom bazel flags can be placed!
-# Using '~' here does not work for some reason, so we use an expanded user home path. 
-try-import ~/.bazelrc.local
+# Using '~' here does not work for some reason, so we use an expanded user home path.
+# NOTE: flags above the following line can be overridden by flags specified in /home/alexander/my.bazelrc   
+try-import /home/alexander/my.bazelrc
 
 # Useful debugging flags
 common:debug --announce_rc
@@ -15,7 +19,6 @@ common:debug --toolchain_resolution_debug
 common:debug --curses=no
 test:debug --test_verbose_timeout_warnings
 test:debug --verbose_test_summary
-
 
 # Repository cache
 fetch --repository_cache=~/.cache/bazel/http
@@ -45,12 +48,6 @@ build:wix --build_tag_filters=-deployable
 fetch --experimental_scale_timeouts=20
 build --experimental_scale_timeouts=20
 
-#-----------------------------------------------------
-# Testing options
-#-----------------------------------------------------
-
-test --strategy=TestRunner=standalone --test_output=all
-
 # TEST - unique flags for running all UT
 # Active those flags by running adding the flag: "--config=ut-only"
 # Note: This is only required if you give bazel wildcard that might include IT
@@ -59,17 +56,5 @@ test:ut-only --test_tag_filters=UT,-IT
 # TEST - unique flags for running IT
 # Active those flags by running adding the flag: "--config=it"
 test:it --test_tag_filters=IT
-test:it --local_test_jobs=1
 
 
-#-----------------------------------------------------
-# Startup & resource utilization options
-#-----------------------------------------------------
- 
-startup --io_nice_level=7
- 
-# Restrictions for local resources (CPU, memory)
-build --local_cpu_resources=HOST_CPUS*.5
-build --local_ram_resources=HOST_RAM*.7
-build --ram_utilization_factor=50
-#build --jobs=4

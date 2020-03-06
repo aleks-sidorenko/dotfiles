@@ -30,10 +30,10 @@ project() {
     echo "Setting current project to [$PROJECT_NAME]"
     
     cd $PROJECT_HOME
-    context=./context
-    if [[ -r "$context" ]] && [[ -f "$context" ]]; then
-        source "$context"
-    fi
+
+    for f in ./.bash/*; do
+        source $f
+    done
 }
 
 _project() {
