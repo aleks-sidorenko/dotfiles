@@ -1,0 +1,36 @@
+#-----------------------------------------------------
+# Testing options
+#-----------------------------------------------------
+
+test --strategy=TestRunner=standalone --test_output=all
+
+# TEST - unique flags for running all UT
+# Active those flags by running adding the flag: "--config=ut-only"
+# Note: This is only required if you give bazel wildcard that might include IT
+test:ut-only --test_tag_filters=UT,-IT
+
+# TEST - unique flags for running IT
+# Active those flags by running adding the flag: "--config=it"
+test:it --test_tag_filters=IT
+test:it --local_test_jobs=1
+
+
+#-----------------------------------------------------
+# Startup & resource utilization options
+#-----------------------------------------------------
+ 
+startup --io_nice_level=7
+ 
+# Restrictions for local resources (CPU, memory)
+build --local_cpu_resources=HOST_CPUS*.5
+build --local_ram_resources=HOST_RAM*.7
+build --ram_utilization_factor=50
+#build --jobs=4
+#
+
+# https://wix.slack.com/archives/C6SJ8V402/p1584259756356600
+# ok when WFH, but should be removed in office
+build --remote_upload_local_results=false
+
+# https://github.com/wix-private/wix-ci/blob/master/localdev/tools/envinstaller/docs/wixtaller-disk-cache.md
+build --config=disk_cache
