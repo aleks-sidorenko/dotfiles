@@ -7,7 +7,7 @@ vm=MultiKey
 # Wait for 1C to finish
 wait_1c() {
     while true; do
-        sleep 10
+        sleep 30
         if [[ -z "$(pidof $_1C_PROC_NAME)" ]]; then
             echo "1C is not running, exiting"
             break
