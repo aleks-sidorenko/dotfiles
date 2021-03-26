@@ -48,6 +48,7 @@ sudo pip3 install thefuck
 # SDK
 sudo apt install -y openjdk-11-jdk
 
+
 # IDE
 sudo snap install code --classic
 sudo snap install intellij-idea-community --classic

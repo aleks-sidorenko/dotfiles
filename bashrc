@@ -77,6 +77,9 @@ plugins=(
   battery
   project
   finance
+  wix
+  haskell
 )
 
 source $OSH/oh-my-bash.sh
+

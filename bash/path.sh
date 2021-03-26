@@ -9,7 +9,6 @@ export XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
 export XDG_CONFIG_DIRS=/etc/xdg
 
 
-
 # Dotfiles home directory
 export DOTFILES_HOME=${HOME}/.dotfiles
 
@@ -18,12 +17,14 @@ export DOTFILES_HOME=${HOME}/.dotfiles
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 
+
 # Path
 
 # Binary paths
 export PATH=${HOME}/.local/bin:/usr/local/bin:/sbin:${PATH}
 # Java path
 export PATH=${JAVA_HOME}/bin:${PATH}
+
 
 
 # GNU coreutils paths
