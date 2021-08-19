@@ -79,6 +79,8 @@ plugins=(
   finance
   wix
   haskell
+  img
+  python
 )
 
 source $OSH/oh-my-bash.sh

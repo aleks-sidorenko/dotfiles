@@ -48,6 +48,11 @@ sudo pip3 install thefuck
 # SDK
 sudo apt install -y openjdk-11-jdk
 
+# Python
+sudo apt install python3-pip
+pip3 install virtualenv
+pip3 install virtualenvwrapper
+
 
 # IDE
 sudo snap install code --classic
