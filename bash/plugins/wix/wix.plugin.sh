@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
+export VMR_CLIENT_ENABLED=True
+export VMR_REPO_RULE_TYPE=git_cached_repository
+
+
 source $HOME/.bazelenv
+
 
 _wix_completion() {
     COMPREPLY=( $( env COMP_WORDS="${COMP_WORDS[*]}" \

@@ -35,8 +35,19 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   tmux
 fi
 
+#
+# History
+#
 
-export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+
+# append history entries..
+shopt -s histappend
+
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 
 # Docker
 export DOCKER_HOST=unix:///var/run/docker.sock
