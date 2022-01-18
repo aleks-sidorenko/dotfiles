@@ -69,9 +69,7 @@ img_resize() {
 
 
 img_dev_pull() {
-
-    device_folders=${1:-$device_folders}
-    dst=$2
+    dst=$1
     
     echo "Pulling images from device folders to $dst"
 
@@ -88,8 +86,6 @@ img_dev_pull() {
 
 img_dev_cleanup() {
 
-    device_folders=${1:-$device_folders}
-    
     echo "Cleaning images from device folders"
 
     for dev in "${device_folders[@]}"

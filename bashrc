@@ -77,7 +77,6 @@ plugins=(
   battery
   project
   finance
-  wix
   haskell
   img
   python
@@ -86,4 +85,3 @@ plugins=(
 source $OSH/oh-my-bash.sh
 
 
-source "$HOME/.bazelenv"
