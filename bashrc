@@ -80,8 +80,7 @@ plugins=(
   haskell
   img
   python
+  network
 )
 
 source $OSH/oh-my-bash.sh
-
-
