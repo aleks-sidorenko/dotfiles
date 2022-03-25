@@ -7,11 +7,11 @@ export PROJECT_CURRENT="${PROJECT_ROOT}/Current"
 export PROJECT_NAME_FILE="${PROJECT_CURRENT}/.project"
 
 
-project-root() {
+project_root() {
     cd $PROJECT_HOME
 }
 
-project-unset() {
+project_unset() {
     _clear_project_name
     export PROJECT_NAME=
     export PROJECT_HOME=
