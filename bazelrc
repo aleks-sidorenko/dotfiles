@@ -16,11 +16,17 @@ test:it --local_test_jobs=1
 
 
 #-----------------------------------------------------
-# Startup & resource utilization options
+# Startup options https://docs.bazel.build/versions/main/command-line-reference.html#startup-options
 #-----------------------------------------------------
  
 startup --io_nice_level=7
- 
+
+
+#-----------------------------------------------------
+# Build options https://docs.bazel.build/versions/main/command-line-reference.html#build-options
+#-----------------------------------------------------
+
+
 # Restrictions for local resources (CPU, memory)
 build --local_cpu_resources=HOST_CPUS*.5
 build --local_ram_resources=HOST_RAM*.7
@@ -33,3 +39,10 @@ build --remote_upload_local_results=false
 
 # https://github.com/wix-private/wix-ci/blob/master/localdev/tools/envinstaller/docs/wixtaller-disk-cache.md
 build --config=disk_cache
+
+
+#-----------------------------------------------------
+# Fetch options https://docs.bazel.build/versions/main/command-line-reference.html#fetch-options
+#-----------------------------------------------------
+
+fetch --remote_timeout=300s
