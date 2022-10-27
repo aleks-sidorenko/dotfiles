@@ -1,5 +1,5 @@
 # dotfiles
-My personal dotfiles for Ubuntu 18.04 LTS
+My personal dotfiles for Ubuntu 22.04 LTS
 
 ## Installation
 ```

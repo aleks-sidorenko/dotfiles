@@ -20,7 +20,7 @@ sudo pip install dotfiles
 git clone --recursive https://github.com/aleks-sidorenko/dotfiles.git $DOTFILES_HOME
 
 # Install oh-my-bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 
 # Sync dotfiles
@@ -30,7 +30,7 @@ mkdir -p $HOME/.config/Code/User
 ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code/User/settings.json
 
 # Install vim & plugins
-sudo apt install -y vim vim-gnome
+sudo apt install -y vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
