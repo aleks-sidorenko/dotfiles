@@ -1,48 +1,9 @@
-#-----------------------------------------------------
-# Testing options
-#-----------------------------------------------------
-
-test --strategy=TestRunner=standalone --test_output=all
-
-# TEST - unique flags for running all UT
-# Active those flags by running adding the flag: "--config=ut-only"
-# Note: This is only required if you give bazel wildcard that might include IT
-test:ut-only --test_tag_filters=UT,-IT
-
-# TEST - unique flags for running IT
-# Active those flags by running adding the flag: "--config=it"
-test:it --test_tag_filters=IT
-test:it --local_test_jobs=1
-
-
-#-----------------------------------------------------
-# Startup options https://docs.bazel.build/versions/main/command-line-reference.html#startup-options
-#-----------------------------------------------------
- 
-startup --io_nice_level=7
-
-
-#-----------------------------------------------------
-# Build options https://docs.bazel.build/versions/main/command-line-reference.html#build-options
-#-----------------------------------------------------
-
-
-# Restrictions for local resources (CPU, memory)
-build --local_cpu_resources=HOST_CPUS*.5
-build --local_ram_resources=HOST_RAM*.7
-#build --jobs=4
+#
+# Use this file to declare system wide custom Bazel flags 
 #
 
-# https://wix.slack.com/archives/C6SJ8V402/p1584259756356600
-# ok when WFH, but should be removed in office
-build --remote_upload_local_results=false
-
-# https://github.com/wix-private/wix-ci/blob/master/localdev/tools/envinstaller/docs/wixtaller-disk-cache.md
-build --config=disk_cache
+# The following line imports a previous version of this file for backwards compatibility with VMR revisions before 
+# December 2020. It is recommended that you keep this import statement unless otherwise prompted. 
+try-import /home/alexander/.config/wix/bazelwrapper/legacy.home.bazelrc
 
 
-#-----------------------------------------------------
-# Fetch options https://docs.bazel.build/versions/main/command-line-reference.html#fetch-options
-#-----------------------------------------------------
-
-fetch --remote_timeout=300s

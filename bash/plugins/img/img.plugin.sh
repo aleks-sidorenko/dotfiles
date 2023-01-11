@@ -4,7 +4,7 @@ FORMAT=%Y%m%d_%H%M%S%%-c.%%e
 
 extensions=("jpg" "mp4" "mov")
 
-device_folders=("/storage/self/primary/DCIM/Camera" "/storage/self/primary/DCIM/Google Photos")
+device_folders=("/storage/self/primary/DCIM/Camera" "/storage/self/primary/Android/data/com.miui.gallery/files")
 
 print_error() {
     printf " [✖] %s\n" "$1"
@@ -48,14 +48,14 @@ img_fixdate() {
 
 img_import() {
     src=$1
-    dest=$2
+    dst=$2
     dir=$(pwd)
     tmp=$(mktemp -d)
 
     echo "Importing images from $src to $dst"
 
     cd $src
-    exiftool -o $tmp -progress -if '$filesize# > 30000' '-Directory<CreateDate' -d $dest/All/%Y/%m -r .
+    exiftool -o $tmp -progress -if '$filesize# > 30000' '-Directory<CreateDate' -d $dst/All/%Y/%m -r .
     rm -rf $tmp
     cd $dir
 

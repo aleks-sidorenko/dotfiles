@@ -84,3 +84,5 @@ plugins=(
 )
 
 source $OSH/oh-my-bash.sh
+
+source "$HOME/.bazelenv"
