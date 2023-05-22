@@ -53,6 +53,11 @@ sudo apt install python3-pip
 pip3 install virtualenv
 pip3 install virtualenvwrapper
 
+# Node
+# NVM
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+nvm install node 
+
 
 # IDE
 sudo snap install code --classic

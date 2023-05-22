@@ -81,8 +81,10 @@ plugins=(
   img
   python
   network
+  node
+  wix
 )
 
 source $OSH/oh-my-bash.sh
 
-source "$HOME/.bazelenv"
+
