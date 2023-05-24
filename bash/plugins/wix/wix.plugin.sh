@@ -5,6 +5,7 @@ export VMR_REPO_RULE_TYPE=git_cached_repository
 
 
 source $HOME/.bazelenv
+source $HOME/.nodeenv
 
 
 _wix_completion() {
