@@ -82,9 +82,8 @@ plugins=(
   python
   network
   node
+  rust
   wix
 )
 
 source $OSH/oh-my-bash.sh
-
-
