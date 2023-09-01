@@ -83,7 +83,7 @@ plugins=(
   network
   node
   rust
-  wix
+  backup
 )
 
 source $OSH/oh-my-bash.sh
