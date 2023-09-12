@@ -28,7 +28,7 @@ call plug#end()
 " Forget compatibility with Vi. Who cares.
 set nocompatible
 
-"Enable filetypes
+" Enable filetypes
 filetype on
 
 filetype plugin on
@@ -43,7 +43,7 @@ set updatetime=250
 " Ever notice a slight lag after typing the leader key + command? This lowers the timeout.
 set timeoutlen=500
 
-" Colours
+" Colors
 colorscheme dracula
 " Show numbers
 set number
@@ -111,6 +111,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " NERDTree
+" Toggle
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Use FZF together with NERDTree
@@ -118,3 +119,8 @@ nnoremap <silent> <expr> <leader><leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\
 
 " Open terminal/console in the bottom
 nnoremap <C-t> :wincmd b \| bel terminal<CR>
+
+" Tabs
+nnoremap  <C-Right> :tabn<CR>
+nnoremap  <C-Left> :tabp<CR>
+nnoremap  <C-n> :tabnew<CR>

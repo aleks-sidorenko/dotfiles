@@ -2,8 +2,8 @@
 
 
 # Project root directory
-export PROJECT_ROOT="${HOME}/Projects"
-export PROJECT_CURRENT="${PROJECT_ROOT}/Current"
+export PROJECTS_ROOT="${HOME}/Projects"
+export PROJECT_CURRENT="${PROJECTS_ROOT}/Current"
 export PROJECT_NAME_FILE="${PROJECT_CURRENT}/.project"
 
 

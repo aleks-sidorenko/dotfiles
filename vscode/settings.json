@@ -7,4 +7,5 @@
     "workbench.iconTheme": "vs-seti",
     "workbench.colorTheme": "Darcula Extended",
     "window.titleBarStyle": "custom",
+    "files.autoSave": "afterDelay",
 }
