@@ -72,11 +72,20 @@ img_resize() {
     find . -maxdepth 1 -iname "*.jpg" | xargs -L1 -I{} convert -resize 50% $src/"{}" $src/"{}"
 }
 
-# TODO
-img_get_last_month() {
-    src=$1
-    dst=$2
-    find $src -maxdepth 2 -type f -newermt "$(date -d "$(date +%y-%m-1) - 1 month" +%y-%m-%d)" -not -newermt "$(date +%y-%m-1)" -print | rsync -avh --progress --files-from=- . $dst
+
+img_rsync_for_dates() {
+    from=$1
+    to=$2
+    src=$3
+    dst=$4
+    find $src -maxdepth 2 -type f -newermt $from -not -newermt $to -print | rsync -avh --progress --files-from=- . $dst
+}
+
+img_clean_for_dates() {
+    from=$1
+    to=$2
+    src=$3
+    find $src -maxdepth 2 -type f -newermt $from -not -newermt $to -exec rm {} \;
 }
 
 
@@ -86,7 +95,7 @@ android_mount() {
     sudo go-mtpfs -allow-other $PHONE_HOME
 }
 
-android_umount() {
+android_unmount() {
     # TODO
     echo "TODO"
 }
@@ -113,11 +122,11 @@ iphone_mount() {
     ifuse $PHONE_HOME
 }
 
-iphone_umount() {
+iphone_unmount() {
     fusermount -u $PHONE_HOME
 }
 
-IPHONE_PHOTO_HOME="$PHONE_HOME/Internal shared storage/DCIM/Camera"
+IPHONE_PHOTO_HOME="$PHONE_HOME/DCIM"
 
 iphone_img_import() {
     dst=$PHOTO_HOME
