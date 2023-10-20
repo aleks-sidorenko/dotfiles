@@ -75,13 +75,12 @@ plugins=(
   git
   bashmarks
   battery
-  project
-  finance
+  project  
   haskell
   img
   python
   network
-  node
+  #node
   rust
   backup
 )

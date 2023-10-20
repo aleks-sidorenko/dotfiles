@@ -78,7 +78,7 @@ img_rsync_for_dates() {
     to=$2
     src=$3
     dst=$4
-    find $src -maxdepth 2 -type f -newermt $from -not -newermt $to -print | rsync -avh --progress --files-from=- . $dst
+    find $src -maxdepth 2 -type f -newermt $from -not -newermt $to -print | rsync -avh --timeout=60 --files-from=- . $dst
 }
 
 img_clean_for_dates() {
@@ -92,12 +92,11 @@ img_clean_for_dates() {
 # ----- Android -----
 android_mount() {
     systemctl --user stop gvfs* # stop all services with gvfs
-    sudo go-mtpfs -allow-other $PHONE_HOME
+    sudo go-mtpfs -allow-other -usb-timeout=100000 $PHONE_HOME
 }
 
-android_unmount() {
-    # TODO
-    echo "TODO"
+android_unmount() {    
+    sudo umount -l $PHONE_HOME
 }
 
 
