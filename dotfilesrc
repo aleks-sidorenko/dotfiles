@@ -1,6 +1,6 @@
 [dotfiles]
 repository = ~/.dotfiles
-packages = ['oh-my-bash']
+packages = ['oh-my-zsh']
 
 
 ignore = [
@@ -13,5 +13,6 @@ ignore = [
     '*.swp']
 
 externals = {
-    '.bzr.log':     '/dev/null',
-    '.uml':         '/tmp'}
+    '.bzr.log': '/dev/null',
+    '.uml': '/tmp'
+}
