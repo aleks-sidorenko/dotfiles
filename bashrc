@@ -83,6 +83,7 @@ plugins=(
   #node
   rust
   backup
+  secure
 )
 
 source $OSH/oh-my-bash.sh

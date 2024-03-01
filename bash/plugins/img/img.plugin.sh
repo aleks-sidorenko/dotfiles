@@ -8,8 +8,8 @@ FORMAT=%Y%m%d_%H%M%S%%-c.%%e
 
 extensions=("jpg" "mp4" "mov" "heic")
 
-PHONE_HOME=/media/phone
-PHOTO_HOME=$HOME/Pictures/Photo
+export PHONE_HOME=/media/phone
+export PHOTO_HOME=$HOME/Pictures/Photo
 
 print_error() {
     printf " [✖] %s\n" "$1"

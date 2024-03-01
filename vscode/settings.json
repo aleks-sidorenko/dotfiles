@@ -5,7 +5,7 @@
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.fontFamily": "Hasklig Medium",
     "workbench.iconTheme": "vs-seti",
-    "workbench.colorTheme": "Darcula Extended",
+    "workbench.colorTheme": "Darcula Theme from IntelliJ",
     "window.titleBarStyle": "custom",
     "files.autoSave": "afterDelay",
 }
