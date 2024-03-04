@@ -1,0 +1,10 @@
+[submodule "zsh-autosuggestions"]
+	path = shell/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+
+[submodule "zsh-syntax-highlighting"]
+	path = shell/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh-dracula"]
+	path = shell/themes/dracula
+	url = https://github.com/dracula/zsh.git

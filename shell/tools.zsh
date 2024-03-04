@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-function update_dotfiles() {
+function dotfiles_update() {
     cwd=$(pwd)
     cd $DOTFILES_HOME
     
@@ -13,6 +13,6 @@ function update_dotfiles() {
 
     cd $cwd
 
-    source $HOME/.bashrc
+    source $HOME/.zshrc
 }
 
