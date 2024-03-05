@@ -1,0 +1,35 @@
+# 'brew tap'
+tap "homebrew/cask"
+# 'brew tap' with custom Git URL
+tap "user/tap-repo", "https://user@bitbucket.org/user/homebrew-tap-repo.git"
+# 'brew tap' with arguments
+tap "user/tap-repo", "https://user@bitbucket.org/user/homebrew-tap-repo.git", force_auto_update: true
+
+# set arguments for all 'brew install --cask' commands
+cask_args appdir: "~/Applications", require_sha: true
+
+# 'brew install'
+brew "git"
+
+brew "gnupg" if OS.mac?
+brew "glibc" if OS.linux?
+
+# 'brew install --cask'
+cask "google-chrome"
+cask "chromium"
+
+# 'brew install --cask' only if '/usr/libexec/java_home --failfast' fails
+cask "java" unless system "/usr/libexec/java_home", "--failfast"
+
+# 'mas install'
+#mas "1Password", id: 443_987_910
+
+# 'whalebrew install'
+#whalebrew "whalebrew/wget"
+
+
+
+cask "visual-studio-code"
+
+# 'vscode --install-extension'
+#vscode "GitHub.codespaces"

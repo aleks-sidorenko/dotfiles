@@ -3,11 +3,11 @@
 export DOTFILES_HOME="${HOME}/.dotfiles"
 SHELL_HOME="${HOME}/.shell"
 GIT_REPO=aleks-sidorenko/dotfiles
-GIT_BRANCH=multios
+GIT_BRANCH=master
 
 
 if [ "$(uname)" = "Darwin" ]; then
-    OS=macos
+    OS=mac
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     OS=linux
 else

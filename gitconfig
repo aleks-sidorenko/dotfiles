@@ -29,6 +29,13 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Delete/cleanup all local branches
+
+    brd = "!f() { \
+        git branch | grep -v \"master\" | xargs git branch -D; \
+    }; f"
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     # Find commits by commit message.
 
     cm = "!f() { \

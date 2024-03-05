@@ -31,6 +31,3 @@ export DOCKER_HOST=unix:///var/run/docker.sock
 # Clear console on exit.:q
 [ "$SHLVL" = 1 ] \
     && clear &> /dev/null
-
-
-#[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
