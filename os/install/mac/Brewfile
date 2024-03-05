@@ -6,7 +6,7 @@ tap "user/tap-repo", "https://user@bitbucket.org/user/homebrew-tap-repo.git"
 tap "user/tap-repo", "https://user@bitbucket.org/user/homebrew-tap-repo.git", force_auto_update: true
 
 # set arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications", require_sha: true
+cask_args appdir: "~/Applications", require_sha: false
 
 # 'brew install'
 brew "git"
@@ -14,9 +14,15 @@ brew "git"
 brew "gnupg" if OS.mac?
 brew "glibc" if OS.linux?
 
+brew "tmux"
+
 # 'brew install --cask'
 cask "google-chrome"
 cask "chromium"
+
+# fonts
+tap "homebrew/cask-fonts"
+cask "font-hasklig"
 
 # 'brew install --cask' only if '/usr/libexec/java_home --failfast' fails
 cask "java" unless system "/usr/libexec/java_home", "--failfast"
@@ -27,9 +33,13 @@ cask "java" unless system "/usr/libexec/java_home", "--failfast"
 # 'whalebrew install'
 #whalebrew "whalebrew/wget"
 
+# IDEs
 
-
+# vscode
 cask "visual-studio-code"
-
 # 'vscode --install-extension'
 #vscode "GitHub.codespaces"
+
+# Intellij
+cask "intellij-idea"
+

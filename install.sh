@@ -14,8 +14,9 @@ else
     echo "Your OS is not supported!"
 fi
 
+
 echo "Installing OS prerequiestics for $OS"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/$GIT_REPO/$GIT_BRANCH/os/$OS/pre-install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/$GIT_REPO/$GIT_BRANCH/os/install/$OS/pre-install.sh)"
 
 chsh -s $(which zsh)
 
@@ -33,17 +34,10 @@ if [ ! -d "$OZH" ]; then
 fi
 
 
-
-echo "Coping OS specific shell files for $OS"
-yes | cp -rf $DOTFILES_HOME/os/$OS/shell/* cp $DOTFILES_HOME/shell
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/$GIT_REPO/$GIT_BRANCH/os/$OS/path.sh)"
-
-
 # Sync dotfiles
 echo "Syncing dotfiles"
 dotfiles --sync --force -C $DOTFILES_HOME/dotfilesrc
 
 
 echo "Installing OS post packages for $OS"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/$GIT_REPO/$GIT_BRANCH/os/$OS/post-install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/$GIT_REPO/$GIT_BRANCH/os/install/$OS/post-install.sh)"

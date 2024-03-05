@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-# Path
+#export PYTHONPATH=/usr/bin:$PYTHONPATH
 
-# Binary paths
+# PATH
 export PATH=/opt/homebrew/bin:${PATH}

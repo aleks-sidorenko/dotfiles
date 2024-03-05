@@ -16,3 +16,17 @@ function dotfiles_update() {
     source $HOME/.zshrc
 }
 
+function get_os() {
+    local OS=unknown
+    if [ "$(uname)" = "Darwin" ]; then
+        OS=mac
+    elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+        OS=linux
+    fi
+
+    echo $OS
+}
+
+
+
+
