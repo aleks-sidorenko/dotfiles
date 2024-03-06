@@ -7,6 +7,10 @@ export VMR_REPO_RULE_TYPE=git_cached_repository
 source $HOME/.bazelenv
 source $HOME/.nodeenv
 
+if [ "$OS" = "mac" ]; then
+    export PATH="/Users/oleksandrsy/.rd/bin:$PATH"
+fi
+
 
 _wix_completion() {
     COMPREPLY=( $( env COMP_WORDS="${COMP_WORDS[*]}" \

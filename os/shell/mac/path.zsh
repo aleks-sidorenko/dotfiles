@@ -5,3 +5,4 @@
 
 # PATH
 export PATH=/opt/homebrew/bin:${PATH}
+export PATH=/opt/homebrew/opt/openjdk@17/bin:$PATH

@@ -25,9 +25,11 @@ export HISTCONTROL=ignoredups:erasedups
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-# Docker
-export DOCKER_HOST=unix:///var/run/docker.sock
-
 # Clear console on exit.:q
 [ "$SHLVL" = 1 ] \
     && clear &> /dev/null
+
+# https://github.com/keybase/keybase-issues/issues/2798
+export GPG_TTY=$(tty)
+
+export OS=$(get_os)

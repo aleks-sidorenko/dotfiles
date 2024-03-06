@@ -269,3 +269,6 @@
 
 [include]
     path = ~/Projects/.gitconfig
+
+[credential "https://dev.azure.com"]
+    useHttpPath = true
