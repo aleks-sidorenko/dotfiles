@@ -78,6 +78,7 @@ plugins=(
     tmux
     project
     secure
+    rust
 )
 
 

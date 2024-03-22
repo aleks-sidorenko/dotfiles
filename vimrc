@@ -15,6 +15,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'dag/vim-fish'
+Plug 'rust-lang/rust.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
