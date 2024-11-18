@@ -26,9 +26,3 @@ function get_os() {
 
     echo $OS
 }
-
-
-
-
-
-

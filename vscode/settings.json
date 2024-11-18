@@ -8,4 +8,10 @@
     "workbench.colorTheme": "Darcula Theme from IntelliJ",
     "window.titleBarStyle": "custom",
     "files.autoSave": "afterDelay",
+    "dotty.trace.machineId": "2e260059-ebaf-4af3-85b3-596c2aed8025",
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
 }

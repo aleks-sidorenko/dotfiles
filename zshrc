@@ -79,6 +79,8 @@ plugins=(
     project
     secure
     rust
+    img
+    backup
 )
 
 
