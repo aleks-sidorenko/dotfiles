@@ -29,7 +29,9 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 [ "$SHLVL" = 1 ] \
     && clear &> /dev/null
 
-# https://github.com/keybase/keybase-issues/issues/2798
-export GPG_TTY=$(tty)
+# https://musigma.blog/2021/05/09/gpg-ssh-ed25519.html
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 export OS=$(get_os)

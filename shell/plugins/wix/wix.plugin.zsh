@@ -7,8 +7,18 @@ export VMR_REPO_RULE_TYPE=git_cached_repository
 source $HOME/.bazelenv
 source $HOME/.nodeenv
 
+
+
 if [ "$OS" = "mac" ]; then
     export PATH="/Users/oleksandrsy/.rd/bin:$PATH"
+
+    # fnm
+    FNM_PATH="/Users/oleksandrsy/Library/Application Support/fnm"
+    if [ -d "$FNM_PATH" ]; then
+    export PATH="/Users/oleksandrsy/Library/Application Support/fnm:$PATH"
+    eval "`fnm env`"
+    fi
+
 fi
 
 

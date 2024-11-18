@@ -1,4 +1,3 @@
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -73,12 +72,14 @@ ZSH_CUSTOM=$HOME/.shell
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
     tmux
     project
     secure
     rust
+    img
+    backup
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 
@@ -114,3 +115,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+

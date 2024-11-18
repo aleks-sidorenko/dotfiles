@@ -186,8 +186,7 @@
 [merge]
     tool = kdiff3    
 
-[mergetool "kdiff3"]
-    path = /usr/bin/kdiff3
+[mergetool "kdiff3"]    
     trustExitCode = false
     
 [mergetool]
@@ -196,8 +195,7 @@
 [diff]
     tool = icdiff
 
-[difftool "kdiff3"]
-    path = /usr/bin/kdiff3
+[difftool "kdiff3"]    
     trustExitCode = false    
 
 [difftool "icdiff"]
@@ -232,9 +230,9 @@
 
 [filter "lfs"]
     required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
 
 
 
@@ -257,7 +255,6 @@
 [difftool "icdiff"]
     cmd = icdiff $LOCAL $REMOTE
 [mergetool "kdiff3"]
-    path = /usr/bin/kdiff3
 [credential]
     helper = store
 [push]
