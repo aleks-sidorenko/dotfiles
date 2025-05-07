@@ -10,3 +10,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/aleks-sidorenko/dotfiles/m
 ```
 dotfiles --sync --force
 ```
+
+## Links
+* https://pypi.org/project/dotfiles/
+* https://github.com/ohmyzsh/ohmyzsh
+* 
