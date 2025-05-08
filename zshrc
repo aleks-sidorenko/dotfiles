@@ -73,6 +73,7 @@ ZSH_CUSTOM=$HOME/.shell
 plugins=(
     git
     tmux
+    gpg
     project
     secure
     rust
