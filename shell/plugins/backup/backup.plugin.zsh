@@ -12,14 +12,14 @@ backup_full() {
 }
 
 backup_pc() {
-    export BACKUPS_DIR=$BACKUPS_HOME/pc
-
+    
     backup_pc_file "/etc/hosts"
     backup_pc_file "/etc/fstab"
     backup_pc_file "/home/$USER/" "rsync-homedir-excludes.txt"
 }
 
 backup_pc_file() {
+    export BACKUPS_DIR=$BACKUPS_HOME/pc
     file=$1
     if [ -z "$2" ]
     then
